@@ -2,18 +2,15 @@
 
 The project consists of 8 files:
 
-* main.c - Bibek Napit
+* main.c
 
     Main file that contains the main function and runs the code
 * Major.h
 
     Main head that handles all the project components and connects them together. Additioanlly, Major.h handles our **exit** and **cd** command. The **exit** command is first searched through using the strstr command, which finds the "exit" needle in the haystack "line", which contains whatever the user inputted. Strstr is utilized several times throughout the code to ensure that it isn't missed, and if its ever found, we set exit_found to 1 and simply call exit. Additionally, if exit is the first element of our array holding the commands, we just exit right then and there, as we need go no further. **CD** is also controlled through Major.h, we pass the string holding our commands through to cd_command_handler, and if our first command is cd, we run through where the command array designates, and go there, error checking throughout the function.
-
 * AliasHandler.h
 
     File has the functions that handles the alias. It defines  a  shortcut for commands  by  essentially  defining  a  new  command  that  substitutes  a  given string  for  some  command,  perhaps  with  various  flags/options. 
-
-
 * History.h
 
     File that handles the myhistory command via a circular linked list.    When adding to list, if list is already 20 or more, the oldest element is overwritten. To handle command arguments, a series of if/else statements are used to determine which variation of arguments are used. If not part of the defined set, the command returns an error. This is the only built-in command to support I/O redirection and pipelining.
